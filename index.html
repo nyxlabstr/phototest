@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZOKTAY | Manifest Noktası</title>
+    <script src="https://cdn.tailwindcss.org"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #ffffff;
+            --bg: #0a0a0a;
+        }
+        body {
+            background-color: var(--bg);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .font-sync { font-family: 'Syncopate', sans-serif; }
+        
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, rgba(10,10,10,1) 100%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .image-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+        }
+
+        .glass-card:hover .image-overlay {
+            opacity: 1;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .float-anim { animation: float 6s ease-in-out infinite; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigasyon -->
+    <nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center mix-blend-difference">
+        <div class="font-sync text-2xl font-bold tracking-widest text-white">ZOKTAY</div>
+        <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest">
+            <a href="#" class="hover:opacity-50 transition">Galeri</a>
+            <a href="#" class="hover:opacity-50 transition">Manifest</a>
+            <a href="#" class="hover:opacity-50 transition">Vizyon</a>
+        </div>
+    </nav>
+
+    <!-- Hero Bölümü -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="http://googleusercontent.com/image_collection/image_retrieval/8454978407366508830_0" 
+                 class="w-full h-full object-cover opacity-40 scale-110" alt="Hero Background">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4">
+            <h1 class="font-sync text-5xl md:text-8xl mb-4 tracking-tighter float-anim uppercase">
+                ZOKTAY
+            </h1>
+            <p class="text-lg md:text-xl font-light tracking-[0.5em] text-gray-400 uppercase">
+                Geleceği Vizyonla İnşa Et
+            </p>
+            <div class="mt-12">
+                <a href="#galeri" class="px-8 py-4 border border-white/20 hover:bg-white hover:text-black transition-all duration-500 rounded-full text-xs tracking-widest uppercase">
+                    Keşfetmeye Başla
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Galeri Başlığı -->
+    <section id="galeri" class="py-20 px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-white/10 pb-8">
+            <div>
+                <h2 class="font-sync text-3xl mb-2">MANIFEST ARŞİVİ</h2>
+                <p class="text-gray-500">Zoktay'ın gözünden estetik ve motivasyon.</p>
+            </div>
+            <div class="text-sm text-gray-400 mt-4 md:mt-0 tracking-widest">
+                2024 COLLECTION / 01
+            </div>
+        </div>
+
+        <!-- Fotoğraf Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Görsel 1 -->
+            <div class="glass-card rounded-2xl overflow-hidden aspect-[4/5] relative group">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/8454978407366508830_1" 
+                     class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Manifest 1">
+                <div class="image-overlay absolute inset-0 p-8 flex flex-col justify-end">
+                    <span class="text-xs tracking-widest mb-2 opacity-70 uppercase">Estetik</span>
+                    <h3 class="font-sync text-lg">VİZYONER BAKIŞ</h3>
+                </div>
+            </div>
+
+            <!-- Görsel 2 -->
+            <div class="glass-card rounded-2xl overflow-hidden aspect-[4/5] relative group">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/8454978407366508830_2" 
+                     class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Manifest 2">
+                <div class="image-overlay absolute inset-0 p-8 flex flex-col justify-end">
+                    <span class="text-xs tracking-widest mb-2 opacity-70 uppercase">Minimalizm</span>
+                    <h3 class="font-sync text-lg">SESSİZ GÜÇ</h3>
+                </div>
+            </div>
+
+            <!-- Görsel 3 -->
+            <div class="glass-card rounded-2xl overflow-hidden aspect-[4/5] relative group">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/8454978407366508830_3" 
+                     class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Manifest 3">
+                <div class="image-overlay absolute inset-0 p-8 flex flex-col justify-end">
+                    <span class="text-xs tracking-widest mb-2 opacity-70 uppercase">Odak</span>
+                    <h3 class="font-sync text-lg">HEDEFE DOĞRU</h3>
+                </div>
+            </div>
+
+            <!-- Görsel 4 -->
+            <div class="glass-card rounded-2xl overflow-hidden aspect-[4/5] relative group">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/8454978407366508830_4" 
+                     class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Manifest 4">
+                <div class="image-overlay absolute inset-0 p-8 flex flex-col justify-end">
+                    <span class="text-xs tracking-widest mb-2 opacity-70 uppercase">Işık</span>
+                    <h3 class="font-sync text-lg">YENİ BİR GÜN</h3>
+                </div>
+            </div>
+
+            <!-- Görsel 5 -->
+            <div class="glass-card rounded-2xl overflow-hidden aspect-[4/5] relative group">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/8454978407366508830_5" 
+                     class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Manifest 5">
+                <div class="image-overlay absolute inset-0 p-8 flex flex-col justify-end">
+                    <span class="text-xs tracking-widest mb-2 opacity-70 uppercase">Derinlik</span>
+                    <h3 class="font-sync text-lg">SINIRSIZLIK</h3>
+                </div>
+            </div>
+
+            <!-- Görsel 6 -->
+            <div class="glass-card rounded-2xl overflow-hidden aspect-[4/5] relative group">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/8454978407366508830_6" 
+                     class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Manifest 6">
+                <div class="image-overlay absolute inset-0 p-8 flex flex-col justify-end">
+                    <span class="text-xs tracking-widest mb-2 opacity-70 uppercase">Manifest</span>
+                    <h3 class="font-sync text-lg">ZOKTAY RUHU</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alt Bilgi -->
+    <footer class="py-20 px-8 text-center border-t border-white/5">
+        <div class="font-sync text-4xl mb-8 opacity-20">ZOKTAY</div>
+        <p class="text-gray-600 text-sm tracking-widest">© 2024 ZOKTAY MANIFEST PROJECT. TÜM HAKLARI SAKLIDIR.</p>
+        <div class="mt-8 flex justify-center space-x-6">
+            <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition">IG</a>
+            <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition">X</a>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mouse takip efekti (Opsiyonel)
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            document.querySelector('header img').style.transform = `scale(1.1) translate(${moveX}px, ${moveY}px)`;
+        });
+    </script>
+</body>
+</html>
